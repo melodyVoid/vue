@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-4组件化应用构建</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <ol>
+        <!-- 创建一个todo-list组建的实例 -->
+        <!-- 现在我们为每个todo-list提供代办项对象 -->
+        <!-- 待办项对象是变量,即其内容可以是动态的 -->
+        <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+    </ol>
+</div>
+<script>
+    //  定义名为todo-item的新组建
+    Vue.component("todo-item",{
+        props:["todo"],
+        template:"<li>{{todo.text}}</li>"
+    });
+    var app = new Vue({
+        el:"#app",
+        data:{
+            groceryList:[
+                {text:"蔬菜"},
+                {text:"奶酪"},
+                {text:"others"}
+            ]
+        }
+    })
+</script>
+</body>
+</html>

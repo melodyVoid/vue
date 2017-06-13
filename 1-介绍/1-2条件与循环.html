@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-2条件与循环</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <span v-if="seen">Now you see me</span>
+</div>
+
+<div id="app1">
+    <ul>
+        <li v-for="todo in todos">
+            {{todo.text}}
+        </li>
+    </ul>
+</div>
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            seen:true
+        }
+    });
+
+    var app1 = new Vue({
+        el:"#app1",
+        data:{
+            todos:[
+                {text:1},
+                {text:2},
+                {text:3}
+            ]
+        }
+    })
+</script>
+</body>
+</html>

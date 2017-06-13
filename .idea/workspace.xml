@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17eb5378-c38f-41ca-863e-978b6edd6838" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/3-模板语法/3-1插值.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/3-模板语法/3-2指令.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/3-模板语法/3-3过滤器.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/3-模板语法/3-4缩写.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/4-计算属性/4-1基础例子.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/4-计算属性/4-2computed属性和watch属性.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/4-计算属性/4-3计算setter.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vue.iws" />
@@ -47,11 +46,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="3-4缩写.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="3-4缩写.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/3-模板语法/3-4缩写.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5672083">
+            <state vertical-scroll-proportion="-11.636364">
               <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="4-1基础例子.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/4-计算属性/4-1基础例子.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.69697">
+              <caret line="28" column="65" selection-start-line="28" selection-start-column="65" selection-end-line="28" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="4-2computed属性和watch属性.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/4-计算属性/4-2computed属性和watch属性.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.606061">
+              <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="4-3计算setter.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/4-计算属性/4-3计算setter.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7518464">
+              <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -83,6 +112,10 @@
         <option value="$PROJECT_DIR$/3-模板语法/3-2指令.html" />
         <option value="$PROJECT_DIR$/3-模板语法/3-3过滤器.html" />
         <option value="$PROJECT_DIR$/3-模板语法/3-4缩写.html" />
+        <option value="$PROJECT_DIR$/4-计算属性/4-1基础例子.html" />
+        <option value="$PROJECT_DIR$/4-计算属性/4-2computed属性和watch属性.html" />
+        <option value="$PROJECT_DIR$/4-计算属性/4-3计算setter.html" />
+        <option value="$PROJECT_DIR$/4-计算属性/4-4观察Watchers.html" />
       </list>
     </option>
   </component>
@@ -138,20 +171,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="vue" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vue" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vue" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3-模板语法" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -368,8 +387,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/3-模板语法/3-4缩写.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5672083">
+        <state vertical-scroll-proportion="-11.636364">
           <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4-计算属性/4-1基础例子.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.69697">
+          <caret line="28" column="65" selection-start-line="28" selection-start-column="65" selection-end-line="28" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4-计算属性/4-2computed属性和watch属性.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.606061">
+          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4-计算属性/4-3计算setter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7518464">
+          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
           <folding />
         </state>
       </provider>

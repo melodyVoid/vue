@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-3实例生命周期</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<script>
+    //created这个钩子在实例被创建之后调用
+    var vm = new Vue({
+        data:{
+            a: 1
+        },
+        created: function () {
+            //this指向vm实例
+            console.log("a is:" + this.a);
+        }
+    });
+</script>
+</body>
+</html>

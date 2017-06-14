@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-1对象语法</title>
+    <style>
+        .red{
+            color:red;
+        }
+        .big{
+            font-size: 50px;
+        }
+        .bg{
+            background: #ccc;
+        }
+    </style>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="red" v-bind:class="{ big:isBig,bg:isBg}">我是一段文字</div>
+    <!-- 你也可以直接绑定数据里的一个对象 -->
+    <div v-bind:class="classObject">可以直接绑定数据里的一个对象</div>
+</div>
+
+<div id="demo">
+    <div v-bind:class="classObj">
+        我们也可以在这里绑定返回对象的计算属性。这是一个常用且强大的模式：
+    </div>
+</div>
+
+<div id="arr">
+    <div v-bind:class="[bigClass,bgClass]">
+        数组语法,我们可以把一个数组传给 v-bind:class ，以应用一个 class 列表：
+    </div>
+</div>
+
+<div id="com">
+    <p>使用组件的方法</p>
+    <my-component class="big"></my-component>
+    <my-component v-bind:class="{ big:isBig }"></my-component>
+</div>
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            isBig:true,
+            isBg:true,
+            classObject:{
+                big:true,
+                bg:false
+            }
+        }
+    });
+
+    //计算属性
+    var demo = new Vue({
+        el:"#demo",
+        data:{
+            isBig:true,
+            error:null
+        },
+        computed:{
+            classObj: function () {
+                return {
+                    big:this.isBig && !this.error
+
+                }
+            }
+        }
+    });
+
+    //数组语法
+    var arr = new Vue({
+        el:"#arr",
+        data:{
+            bigClass:"big",
+            bgClass:"bg"
+        }
+    });
+
+    //用在组件上
+    Vue.component("my-component",{
+        template:"<p class='red bg'>Hi</p>"
+    });
+
+    var com = new Vue({
+        el:"#com",
+        data:{
+            isBig:true
+        }
+    })
+</script>
+</body>
+</html>

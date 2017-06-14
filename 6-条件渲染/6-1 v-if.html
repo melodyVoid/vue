@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6-1 v-if </title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <template v-if="ok">
+        <h1>Title</h1>
+        <p>Paragraph</p>
+        <P>Paragraph2</P>
+    </template>
+</div>
+
+<div id="demo">
+    <div v-if="Math.random()>0.5">
+        Now you see me
+    </div>
+    <div v-else>
+        Now you don't
+    </div>
+    <!-- v-else 元素必须紧跟在 v-if 或者 v-else-if 元素的后面——否则它将不会被识别。 -->
+</div>
+
+<div id="app1">
+    <div v-if="type === 'A'">A</div>
+    <div v-else-if="type === 'B'">B</div>
+    <div v-else-if="type === 'C'">C</div>
+    <div v-else>Not A/B/C</div>
+</div>
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            ok:true
+        }
+    });
+
+    var demo = new Vue({
+        el:"#demo"
+    });
+
+    var app1 = new Vue({
+        el:"#app1",
+        data:{
+            type:"N"
+        }
+    })
+</script>
+</body>
+</html>

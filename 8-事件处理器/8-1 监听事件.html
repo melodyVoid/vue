@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8-1 监听事件</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<!-- 可以用v-on指令监听DOM事件来触发一些JS代码 -->
+<div id="app">
+    <button v-on:click="counter += 1">增加1</button>
+    <p>这个按钮被点击了{{ counter }}次</p>
+</div>
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            counter:0
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7-6 v-for with v-if</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<!-- 当它们处于同一节点， v-for 的优先级比 v-if 更高，
+这意味着 v-if 将分别重复运行于每个 v-if 循环中。
+当你想为仅有的 一些 项渲染节点时，这种优先级的机制会十分有用，如下：
+-->
+<ul id="demo">
+    <li v-for="todo in todos" v-if="!todo.isComplete">
+        {{ todo.name }}
+    </li>
+</ul>
+<script>
+    var demo = new Vue({
+        el: "#demo",
+        data: {
+            todos: [
+                {name:"事件一",isComplete:true},
+                {name:"事件二",isComplete:false},
+                {name:"事件三",isComplete:true}
+            ]
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7-3 对象迭代</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<ul id="repeat-object">
+    <li v-for="value in object">
+        {{ value }}
+    </li>
+    <!-- 两个参数 -->
+    <li v-for="(value,key) in object">
+        {{ key }} : {{ value }}
+    </li>
+    <!-- 三个参数 -->
+    <li v-for="(value,key,index) in object">
+        {{ index }}.{{ key }} : {{ value }}
+    </li>
+</ul>
+<script>
+    var app = new Vue({
+        el:"#repeat-object",
+        data:{
+            object:{
+                firstName:"John",
+                lastName:"Doe",
+                age:30
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9-4 单选框</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <input type="radio" id="one" value="One" v-model="picked">
+    <label for="one">One</label>
+    <br>
+    <input type="radio" id="two" value="Two" v-model="picked">
+    <label for="two">Two</label>
+    <br>
+    <span>picked:{{ picked }}</span>
+</div>
+<script>
+    var demo = new Vue({
+        el:"#demo",
+        data:{
+            picked:""
+        }
+    })
+</script>
+</body>
+</html>

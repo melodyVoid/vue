@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9-8 绑定value之单选按钮</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <input type="radio" v-model="picked" v-bind:value="a">
+    <span>picked: {{picked}}</span>
+</div>
+<script>
+    var vm = new Vue({
+        el:"#demo",
+        data:{
+            picked:"",
+            a:true
+        }
+    });
+
+    //当选中时,vm.picked === vm.a
+</script>
+</body>
+</html>

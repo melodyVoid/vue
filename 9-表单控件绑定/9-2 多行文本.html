@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9-2 多行文本</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <span>Multiline message is: </span>
+    <p style="white-space:pre">{{ message }}</p>
+    <br>
+    <!-- 注意:在文本域中插值并不会生效,应用v-model代替,下面的"aaann"就是无效的 -->
+    <textarea v-model="message" placeholder="add multiple lines">aaann</textarea>
+</div>
+<script>
+    var demo = new Vue({
+        el:"#demo",
+        data:{
+            message:""
+        }
+    })
+</script>
+</body>
+</html>

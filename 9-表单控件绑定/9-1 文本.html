@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9-1 文本</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="message" placeholder="edit me">
+    <p>Message is : {{ message }}</p>
+</div>
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            message:"melody"
+        }
+    })
+</script>
+</body>
+</html>

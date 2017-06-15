@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9-7 绑定value之复选框</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <input type="checkbox"
+           v-model="toggle"
+           v-bind:true-value="a"
+           v-bind:false-value="b"
+    >
+    <span>toggle: {{ toggle }}</span>
+</div>
+<script>
+    var vm = new Vue({
+        el:"#demo",
+        data:{
+            toggle:true,
+            a:true,
+            b:false
+        }
+    });
+
+    //当选中时, vm.toggle === vm.a
+    //当没有选中时,  vm.toggle === vm.b
+</script>
+</body>
+</html>

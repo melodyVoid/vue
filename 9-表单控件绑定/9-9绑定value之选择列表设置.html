@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9-9绑定value之选择列表设置</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <select v-model="selected">
+        <!-- 内联对象字面量 -->
+        <option v-bind:value="{ number: 123 }">123</option>
+    </select>
+    <span>selected: {{ selected }}</span>
+</div>
+<script>
+    var demo = new Vue({
+        el:"#demo",
+        data:{
+            selected:""
+        }
+    });
+
+    //当选中时
+    console.log(typeof demo.selected);
+    console.log(demo.selected.number)
+</script>
+</body>
+</html>

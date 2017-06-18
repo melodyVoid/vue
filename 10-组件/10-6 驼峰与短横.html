@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-6 驼峰与短横</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <child my-message="hello"></child>
+</div>
+<script>
+    Vue.component("child",{
+        //js里的驼峰式
+        props:["myMessage"],
+        template:"<span>{{myMessage}}</span>"
+    });
+    var demo = new Vue({
+        el:"#demo"
+    })
+</script>
+</body>
+</html>

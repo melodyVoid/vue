@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-7 动态props</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <input type="text" v-model="parentMsg">
+    <br>
+    <child v-bind:my-message="parentMsg"></child>
+    <h4>下面是简写:</h4>
+    <child :my-message="parentMsg"></child>
+</div>
+<script>
+    Vue.component("child",{
+        props:["myMessage"],
+        template:"<span>{{ myMessage }}</span>"
+    });
+    var demo = new Vue({
+        el:"#demo",
+        data:{
+            parentMsg:"default"
+        }
+    })
+</script>
+</body>
+</html>

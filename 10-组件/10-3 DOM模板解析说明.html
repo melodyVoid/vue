@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-3 DOM模板解析说明</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<!-- 自定义组件中使用这些受限制的元素时会导致一些问题,例如: -->
+<table>
+    <my-row></my-row>
+</table>
+<!-- 自定义组件my-row被认为是无效的内容,因此在渲染的时候会导致错误.变通的方案是使用
+特殊的is属性 -->
+<table>
+    <tr is="my-row"></tr>
+</table>
+<!-- 应当注意:如果你使用来自以下来源之一的字符串模板,这些限制将不再适用 -->
+<!-- <script type="text/x-template">-->
+<!-- JavaScript内联模板字符串 -->
+<!-- .vue组件 -->
+<!-- 因此有必要的话请使用字符串模板 -->
+</body>
+</html>

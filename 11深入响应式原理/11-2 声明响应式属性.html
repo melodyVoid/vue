@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11-2 声明响应式属性</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="vm">
+
+</div>
+<script>
+    /*
+    * 由于vue不允许动态添加根级响应式属性,所以你必须在初始化实例前声明根级响应式属性,哪怕只是一个空值*/
+    var vm = new Vue({
+        el:"#vm",
+        data:{
+            //声明message为一个空值字符串
+            message:""
+        },
+        template:"<div>{{ message }}</div>"
+    });
+    //之后设置message
+    vm.message = "Hello";
+
+    /*
+    * 如果你在data选项中未声明message,Vue将警告你渲染函数在视图访问的属性不存在
+    *
+    * 这样的限制在背后是有其技术原因的,它消除了在依赖项跟踪系统中的一类边界情况,
+    * 也使Vue实例在类型检查系统的帮助下运行得更高效.
+    * 而且在代码的可维护性方面也有一点重要的考虑:data对象就像组件状态的概要
+    * 提前声明所有的响应式属性,可以让组件代码在以后重新阅读或其他开发人员阅读时更容易被理解*/
+</script>
+</body>
+</html>

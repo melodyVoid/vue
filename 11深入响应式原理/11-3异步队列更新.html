@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11-3异步队列更新</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="vm">{{message}}</div>
+<div id="demo">
+    <example></example>
+</div>
+<script>
+    /*
+    * 可能你没有注意到,Vue异步执行DOM更新.只要观察到数据变化,Vue将开启一个队列.并缓冲在同一
+    * 事件循环中发生的所有数据改变.如果同一个watcher被多次触发,只会一次推入到队列中,这种在
+    * 缓冲时去除重复数据对于避免不必要的计算和DOM操作上非常重要.然后,在下一个事件循环"tick"
+    * 中,Vue刷新队列并执行实际的(已去重的)工作,Vue在内部尝试对异步队列使用原生的Promise.then
+    * 和MutationObsever,如果执行环境不支持会采用setTimeout(fn,0)代替*/
+    var vm = new Vue({
+        el:"#vm",
+        data:{
+            message:"123"
+        }
+    });
+    //更改数据
+    vm.message = "new message";
+    console.log(vm.$el.textContent === "new message");   //false
+    Vue.nextTick(function () {
+        console.log(vm.$el.textContent === "new message");  //true
+    });
+
+    //在组件内使用vm.$nextTick()实例方法特别方便,因为它不需要全局Vue,并且回调函数中的this
+    //将自动绑定到当前的vue实例上.
+    Vue.component("example",{
+        template:"<span v-on:click='updateMessage'>{{message}}</span>",
+        data: function () {
+            return {
+                message:"没有更新"
+            }
+        },
+        methods:{
+            updateMessage: function () {
+                this.message = "更新完成";
+                console.log(this.$el.textContent);    //"没有更新"
+                this.$nextTick(function () {
+                    console.log(this.$el.textContent);  //"更新完成"
+                })
+            }
+        }
+    });
+    new Vue({
+        el:"#demo"
+    })
+</script>
+</body>
+</html>

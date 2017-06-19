@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12-1单元素,组件的过渡</title>
+    <style>
+        .fade-enter-active,.fade-leave-active{
+            transition:opacity 0.5s
+        }
+        .fade-enter,.fade-leave-to{
+            opacity:0
+        }
+    </style>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <button v-on:click="show =!show">Toggle</button>
+    <transition name="fade">
+        <p v-if="show">hello</p>
+    </transition>
+</div>
+<script>
+    /*Vue提供了transition的封装组件,在下列情形中,可以给任何元素和组件添加entering/leaving过渡
+    * - 条件渲染(使用v-if)
+    * - 条件展示(使用v-show)
+    * - 动态组件
+    * - 组件跟节点*/
+    new Vue({
+        el:"#demo",
+        data:{
+            show:true
+        }
+    })
+</script>
+</body>
+</html>

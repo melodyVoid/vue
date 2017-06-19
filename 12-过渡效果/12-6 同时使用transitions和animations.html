@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12-6 同时使用transitions和animations</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+
+</div>
+<script>
+    /*
+    * Vue为了知道过渡的完成,必须设置相应的事件监听器,它可以是transition end或animation end
+    * 这取决于给元素应用的CSS规则,如果你使用其中任何一种,Vue能自动识别类型并设置监听
+    *
+    * 但是,在一些场景中,你需要给同一个元素同时设置两种过渡动效,比如animation被很快地触发并完成了
+    * 而transition效果还没有结束.在这种情况下,你就需要使用type特性并设置animation或transition
+    * 来明确声明你需要Vue监听的类型*/
+</script>
+</body>
+</html>

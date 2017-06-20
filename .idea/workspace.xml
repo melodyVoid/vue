@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17eb5378-c38f-41ca-863e-978b6edd6838" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/12-过渡效果/12-1单元素,组件的过渡.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/12-过渡效果/12-2过渡的css类名.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/12-过渡效果/12-3 CSS过渡.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/12-过渡效果/12-4 CSS动画.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/12-过渡效果/12-5自定义过渡类名.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/12-过渡效果/12-6 同时使用transitions和animations.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/12-过渡效果/12-7Javascript钩子.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vue.iws" />
@@ -109,11 +104,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="12-6 同时使用transitions和animations.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="12-6 同时使用transitions和animations.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/12-过渡效果/12-6 同时使用transitions和animations.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28444445">
+            <state vertical-scroll-proportion="-5.818182">
               <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="12-7Javascript钩子.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/12-过渡效果/12-7Javascript钩子.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.17777778">
+              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -135,8 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/6-条件渲染/6-1 v-if.html" />
-        <option value="$PROJECT_DIR$/6-条件渲染/6-2 v-show.html" />
         <option value="$PROJECT_DIR$/7-列表渲染/7-1 v-for基本用法.html" />
         <option value="$PROJECT_DIR$/7-列表渲染/7-2 template.html" />
         <option value="$PROJECT_DIR$/7-列表渲染/7-3 对象迭代.html" />
@@ -186,6 +189,8 @@
         <option value="$PROJECT_DIR$/12-过渡效果/12-4 CSS动画.html" />
         <option value="$PROJECT_DIR$/12-过渡效果/12-5自定义过渡类名.html" />
         <option value="$PROJECT_DIR$/12-过渡效果/12-6 同时使用transitions和animations.html" />
+        <option value="$PROJECT_DIR$/test.html" />
+        <option value="$PROJECT_DIR$/12-过渡效果/12-7Javascript钩子.html" />
       </list>
     </option>
   </component>
@@ -383,14 +388,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/4-计算属性/4-1基础例子.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.69697">
-          <caret line="28" column="65" selection-start-line="28" selection-start-column="65" selection-end-line="28" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/4-计算属性/4-2computed属性和watch属性.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.606061">
@@ -416,6 +413,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="7.121212">
           <caret line="44" column="18" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -423,6 +421,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.6969695">
           <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -472,6 +471,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.3333333">
           <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding>
+            <marker date="1497432712000" expanded="true" signature="542:629" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -479,6 +481,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.727272">
           <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -500,6 +503,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.151516">
           <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -535,6 +539,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.727273">
           <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
+          <folding>
+            <marker date="1497446673000" expanded="true" signature="146:533" placeholder="..." />
+            <marker date="1497446673000" expanded="true" signature="218:233" placeholder="..." />
+            <marker date="1497446673000" expanded="true" signature="440:515" placeholder="{&quot;el&quot;: &quot;#demo&quot;...}" />
+            <marker date="1497446673000" expanded="true" signature="475:509" placeholder="{&quot;message&quot;: &quot;&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -771,8 +781,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/12-过渡效果/12-6 同时使用transitions和animations.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28444445">
+        <state vertical-scroll-proportion="-5.818182">
           <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12-过渡效果/12-7Javascript钩子.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17777778">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
           <folding />
         </state>
       </provider>

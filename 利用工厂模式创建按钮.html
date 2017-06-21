@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>利用工厂模式创建按钮</title>
+</head>
+<body>
+<script>
+    var BtnFactory = function (type,val) {
+        if(this instanceof BtnFactory){
+            var o = new this[type](val);
+            return o;
+        }else{
+            return new BtnFactory(type,val);
+        }
+    };
+    BtnFactory.prototype = {
+        default: function (val) {
+            this.val = val;
+            (function (val) {
+                var oBtn = document.createElement("input");
+                oBtn.type = "button";
+                oBtn.value = val;
+                document.body.appendChild(oBtn);
+            })(val)
+        },
+        submit: function (val) {
+            this.val = val;
+            (function (val) {
+                var oBtn = document.createElement("input");
+                oBtn.type = "submit";
+                oBtn.value = val;
+                document.body.appendChild(oBtn);
+            })(val)
+        },
+        reset: function (val) {
+            this.val = val;
+            (function (val) {
+                var oBtn = document.createElement("input");
+                oBtn.type = "reset";
+                oBtn.value = val;
+                document.body.appendChild(oBtn);
+            })(val)
+        }
+    };
+    var btn = [
+        {type:"default",val:"默认按钮"},
+        {type:"submit",val:"提交"},
+        {type:"reset",val:"重置"}
+    ];
+    for(var i = 0;i<btn.length;i++){
+        BtnFactory(btn[i].type,btn[i].val);
+    }
+</script>
+</body>
+</html>

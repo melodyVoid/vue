@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12-9初始渲染的过渡</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="vm">
+    <!-- 自定义CSS类名 -->
+    <transition
+            appear
+            appear-class="custom-appear-class"
+            appear-active-class="custom-appear-active-class"
+    >
+
+    </transition>
+    <!-- 自定义JS钩子 -->
+    <transition
+            appear
+            v-on:before-appear="customBeforeAppearHook"
+            v-on:appear="customAppearHook"
+            v-on:after-appear="customAfterAppearHook"
+    >
+
+    </transition>
+
+</div>
+<script>
+    //可以通过appear特性设置节点的初始渲染过渡
+
+</script>
+</body>
+</html>

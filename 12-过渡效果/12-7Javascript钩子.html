@@ -6,6 +6,65 @@
     <script src="../vue.js"></script>
 </head>
 <body>
+    <div id="vm">
+        <transition
+                v-on:before-enter="beforeEnter"
+                v-on:enter="enter"
+                v-on:after-enter="afterEnter"
+                v-on:enter-cancelled="enterCancelled"
 
+                v-on:before-leave="beforeLeave"
+                v-on:leave="leave"
+                v-on:after-leave="afterLeave"
+                v-on:leave-cancelled="leaveCancelled"
+        >
+
+        </transition>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:"#vm",
+            methods:{
+                //------
+                //进入中
+                //------
+                beforeEnter: function (el) {
+                    //...
+                },
+                //次回调函数是可选的设置
+                //与CSS结合时使用
+                enter: function (el,done) {
+                    //...
+                    done();
+                },
+                afterEnter: function (el) {
+                    //...
+                },
+                enterCancelled: function (el) {
+                    //...
+                },
+
+                //------
+                //离开时
+                //------
+                beforeLeave: function (el) {
+                    //...
+                },
+                //次回调函数是可选的设置
+                //与CSS结合时使用
+                leave: function (el,done) {
+                    //...
+                    done();
+                },
+                afterLeave: function (el) {
+                    //...
+                },
+                leaveCancelled: function (el) {
+                    //...
+                }
+            }
+        });
+        //这些钩子函数可以结合CSS transition/animation使用,也可以单独使用.
+    </script>
 </body>
 </html>

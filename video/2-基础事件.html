@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-基础事件</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <button v-on:click="show">按钮</button>
+    <button @click="show">点击</button>
+    <ul>
+        <li v-for="item in arr">
+            {{ item }}
+        </li>
+    </ul>
+    <button @click="add('pear')">添加</button>
+</div>
+<script>
+    var demo = new Vue({
+        el:"#demo",
+        data:{
+            arr:["apple","banana","orange"]
+        },
+        methods:{
+            show: function () {
+                alert("你点击了按钮");
+            },
+            add: function (item) {
+                this.arr.push(item)
+            }
+        }
+    })
+</script>
+</body>
+</html>

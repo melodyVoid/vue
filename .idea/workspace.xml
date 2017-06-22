@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17eb5378-c38f-41ca-863e-978b6edd6838" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/12-过渡效果/12-10多个元素过渡.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/12-过渡效果/12-11过渡模式.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/12-过渡效果/12-12多个组件的过渡.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/12-过渡效果/12-13列表的进入和离开过渡.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/12-过渡效果/12-8一个使用 Velocity.js 的简单例子.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/12-过渡效果/12-9初始渲染的过渡.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/video/1-循环.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/video/2-基础事件.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/video/3-显示隐藏.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/12-过渡效果/12-7Javascript钩子.html" afterPath="$PROJECT_DIR$/12-过渡效果/12-7Javascript钩子.html" />
     </list>
     <ignored path="vue.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,11 +86,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="12-13列表的进入和离开过渡.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="12-13列表的进入和离开过渡.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/12-过渡效果/12-13列表的进入和离开过渡.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.28">
+            <state vertical-scroll-proportion="5.7272725">
               <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1-循环.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/video/1-循环.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.181818">
+              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2-基础事件.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/video/2-基础事件.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.545455">
+              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="3-显示隐藏.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/video/3-显示隐藏.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.60444444">
+              <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -116,9 +142,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/8-事件处理器/8-3 内联处理器方法.html" />
-        <option value="$PROJECT_DIR$/8-事件处理器/8-4 事件修饰符.html" />
-        <option value="$PROJECT_DIR$/8-事件处理器/8-5 按键修饰符.html" />
         <option value="$PROJECT_DIR$/8-事件处理器/8-1 文本.html" />
         <option value="$PROJECT_DIR$/9-表单控件绑定/9-1 文本.html" />
         <option value="$PROJECT_DIR$/9-表单控件绑定/9-2 多行文本.html" />
@@ -167,6 +190,9 @@
         <option value="$PROJECT_DIR$/12-过渡效果/12-11过渡模式.html" />
         <option value="$PROJECT_DIR$/12-过渡效果/12-12多个组件的过渡.html" />
         <option value="$PROJECT_DIR$/12-过渡效果/12-13列表的进入和离开过渡.html" />
+        <option value="$PROJECT_DIR$/video/1-循环.html" />
+        <option value="$PROJECT_DIR$/video/2-基础事件.html" />
+        <option value="$PROJECT_DIR$/video/3-显示隐藏.html" />
       </list>
     </option>
   </component>
@@ -235,7 +261,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="12-过渡效果" />
+              <option name="myItemId" value="video" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -373,31 +399,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/7-列表渲染/7-5 组件和v-for.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3333333">
-          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-          <folding>
-            <marker date="1497432712000" expanded="true" signature="542:629" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/7-列表渲染/7-6 v-for with v-if.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.727272">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/7-列表渲染/7-7 显示过滤,排序结果.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.515152">
-          <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/8-事件处理器/8-1 监听事件.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.363636">
@@ -489,6 +490,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.060606">
           <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+          <folding>
+            <marker date="1497496043000" expanded="true" signature="153:576" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -503,6 +507,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.181818">
           <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+          <folding>
+            <marker date="1497496344000" expanded="true" signature="154:448" placeholder="..." />
+            <marker date="1497496344000" expanded="true" signature="304:398" placeholder="{&quot;el&quot;: &quot;#demo&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -790,8 +798,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/12-过渡效果/12-13列表的进入和离开过渡.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.28">
+        <state vertical-scroll-proportion="5.7272725">
           <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/video/1-循环.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.181818">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/video/2-基础事件.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.545455">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/video/3-显示隐藏.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60444444">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
           <folding />
         </state>
       </provider>

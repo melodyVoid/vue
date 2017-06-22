@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-循环</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <ul>
+        <li v-for="item in arr">
+            {{ item }}
+        </li>
+    </ul>
+    <hr>
+    <ul>
+        <li v-for="(item,index) in arr">
+            {{ item }} : {{ index }}
+        </li>
+    </ul>
+    <hr>
+    <ul>
+        <li v-for="value in json">
+            {{ value }}
+        </li>
+    </ul>
+    <hr>
+    <ul>
+        <li v-for="(value,key) in json">
+            {{ value }} : {{ key }}
+        </li>
+    </ul>
+    <hr>
+    <ul>
+        <li v-for="(value,key,index) in json">
+            {{ value }} : {{key}} : {{index}}
+        </li>
+    </ul>
+</div>
+<script>
+    var demo = new Vue({
+        el:"#demo",
+        data:{
+            arr:["apple","banana","orange","pear"],
+            json:{
+                "a":"apple",
+                "b":"banana",
+                "c":"orange",
+                "d":"pear"
+            }
+        }
+    })
+</script>
+</body>
+</html>

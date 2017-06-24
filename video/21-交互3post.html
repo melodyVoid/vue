@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>21-交互3post</title>
+    <script src="../vue.js"></script>
+    <script src="../vue-resource.js"></script>
+</head>
+<body>
+<div id="demo">
+    <input type="button" value="点击获取文本" @click="post">
+</div>
+<script>
+    new Vue({
+        el: "#demo",
+        methods: {
+            post(){
+                this.$http.post("post.php", {
+                            a: 1,
+                            b: 2
+                        },
+                        {
+                            emulateJSON:true           //模拟post发送数据的头文件
+                        })
+                        .then(function (res) {
+                            console.log(res.data);
+                        }, function (res) {
+                            console.log(res.status);
+                        })
+            }
+        }
+    })
+</script>
+</body>
+</html>

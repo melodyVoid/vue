@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>22-交互4jsonp</title>
+    <script src="../vue.js"></script>
+    <script src="vue-resource.js"></script>
+</head>
+<body>
+<div id="demo">
+    <input type="button" value="点击获取文本" @click="jsonp">
+</div>
+<script>
+    new Vue({
+        el: "#demo",
+        methods: {
+            jsonp(){
+                this.$http.jsonp("https://sug.so.360.cn/suggest", {
+                            word: "a"
+                        },
+                        {
+                            jsonp:"callback"
+                        })
+                        .then(function (res) {
+                            console.log(res.data);
+                        }, function (res) {
+                            console.log(res.status);
+                        })
+            }
+        }
+    })
+</script>
+</body>
+</html>

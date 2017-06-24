@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>19-交互</title>
+    <script src="../vue.js"></script>
+    <script src="../vue-resource.js"></script>
+</head>
+<body>
+<div id="demo">
+    <input type="button" value="点击获取文本" @click="get">
+</div>
+<script>
+    new Vue({
+        el:"#demo",
+        methods:{
+            get(){
+                this.$http.get("a.txt")
+                        .then(function (res) {
+                            console.log(res.data);
+                        }, function (res) {
+                            console.log(res.status);
+                        })
+            }
+        }
+    })
+</script>
+</body>
+</html>

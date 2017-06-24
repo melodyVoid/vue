@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14-属性</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <img v-bind:src="url" alt="百度">
+</div>
+<script>
+    new Vue({
+        el:"#demo",
+        data:{
+            url:"https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/yunying/Turing2017PC/common/doodle-2/78.jpg"
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11-键盘事件</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <input type="text" @keydown="show($event)">
+</div>
+<script>
+    new Vue({
+        el:"#demo",
+        methods:{
+            show(ev){
+                if(ev.keyCode == 13){
+                    alert("您按回车了");
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

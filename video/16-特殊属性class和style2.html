@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16-特殊属性class和style2</title>
+    <style>
+        .red{
+            color:red
+        }
+        .blue{
+            background: blue;
+        }
+    </style>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <div :class="{red:a,blue:b}">我是一段文字</div>
+</div>
+<script>
+    new Vue({
+        el:"#demo",
+        data:{
+            a:true,
+            b:true
+        }
+    })
+</script>
+</body>
+</html>

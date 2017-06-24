@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13-键盘事件3</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <input type="text" @keydown.13="show">
+    <hr>
+    <input type="text" @keydown.enter="show">
+</div>
+<script>
+    new Vue({
+        el:"#demo",
+        methods:{
+            show(){
+                //不在这里进行判断了
+                alert("您按了回车键")
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>18-模板</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <input type="text" v-model="msg">
+    {{ msg }}
+    <br>
+    <span v-once>{{msg}}</span>
+    <div v-html="msg"></div>
+</div>
+<script>
+    new Vue({
+        el:"#demo",
+        data:{
+            msg:"faf"
+        }
+    })
+</script>
+</body>
+</html>

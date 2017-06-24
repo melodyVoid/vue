@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8-默认行为</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <div class="box" @contextmenu="show"></div>
+</div>
+<script>
+    new Vue({
+        el:"#demo",
+        methods:{
+            show(){
+                alert(1);
+            }
+        }
+    })
+</script>
+</body>
+</html>

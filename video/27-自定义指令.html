@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>27-自定义指令</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <span v-red>我是一段文字</span>
+    <br>
+    <span v-red v-text="msg"></span>
+</div>
+<script>
+    Vue.directive("red", function (el) {     //注意这里不写v-,但是在html里要写
+        el.style.color = "red";       //function的第一个参数el就是指当前元素
+    });
+    var vm = new Vue({
+        el:"#demo",
+        data:{
+            msg:"我是另一段文字"
+        }
+    });
+
+
+</script>
+</body>
+</html>

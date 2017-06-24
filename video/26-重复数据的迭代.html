@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>26-重复数据的迭代</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <input type="button" value="添加" @click="add">
+    <ul>
+        <li v-for="(item,index) in arr" :key="index">{{item}}</li>
+    </ul>
+</div>
+<script>
+    var vm = new Vue({
+        el:"#demo",
+        data:{
+            arr:["apple","banana"]
+        },
+        methods:{
+            add(){
+                this.arr.push("pear");
+            }
+        }
+    })
+</script>
+</body>
+</html>

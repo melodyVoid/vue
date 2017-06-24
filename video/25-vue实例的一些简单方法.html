@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>25-vue实例的一些简单方法</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <span v-text="msg"></span>
+</div>
+<script>
+    var vm = new Vue({
+        aa:111,
+        data:{
+            msg:"hello"
+        }
+    });
+    //vm.mount("#demo")手动挂载
+    vm.$mount("#demo");
+    //vm.$el就是元素
+    vm.$el.style.background = "red";
+    //vm.$data就是data
+    vm.$data.msg = "vue";
+    console.log(vm.$options.aa);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>30-绑定键盘信息</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <input type="text" @keydown.enter="show">
+    <input type="text" @keydown.a="show">
+</div>
+<script>
+    //    Vue.directive("on").keyCodes.a = 97;    //1.0的方式,已废弃
+    Vue.config.keyCodes.a = 65;
+    new Vue({
+        el: "#demo",
+        methods: {
+            show(){
+                alert(1);
+            }
+        }
+    })
+</script>
+</body>
+</html>

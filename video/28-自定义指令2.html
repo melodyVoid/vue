@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>28-自定义指令2</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        .red{
+            background: red;
+            left: 0;
+            top: 0;
+        }
+        .blue{
+            background: blue;
+            right: 0;
+            top: 0;
+        }
+    </style>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <div class="box red" v-drag></div>
+    <div class="box blue" v-drag></div>
+</div>
+<script>
+    Vue.directive("drag", function (el) {
+        var oDiv = el;
+        oDiv.onmousedown = function (ev) {
+            var deltaX = ev.clientX - oDiv.offsetLeft;
+            var deltaY = ev.clientY - oDiv.offsetTop;
+            document.onmousemove = function (ev) {
+                var l = ev.clientX - deltaX;
+                var t = ev.clientY - deltaY;
+                oDiv.style.left = l + "px";
+                oDiv.style.top = t + "px";
+                return false;
+            };
+            document.onmouseup = function () {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            };
+            return false;
+        }
+    });
+    var vm = new Vue({
+        el:"#demo",
+        data:{
+
+        }
+    })
+</script>
+</body>
+</html>

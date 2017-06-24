@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>24-计算属性2</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="vm">
+    <input type="number" v-model="a">
+    <br>
+    a: {{a}}
+    <br>
+    b:{{b}}
+</div>
+<script>
+    var vm = new Vue({
+        el:"#vm",
+        data:{
+            a:1
+        },
+        computed:{
+            b: {
+                get(){
+                    return parseInt(this.a) + 1;
+                },
+                set(val){
+                    this.a = val;
+                }
+            }
+        }
+    });
+    document.onclick = function () {
+        vm.b = 10;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>41-父子组件通信</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <parent></parent>
+</div>
+<template id="parent">
+    <div>
+        <h2>我是父组件</h2>
+        <!-- 第一步:子组件现在父组件拿到数据,绑定在自己的属性上:m="msg" -->
+        <!-- 绑定多条也可以,但要注意html里用短横,js里用驼峰-->
+        <child :m="msg" :my-msg="msg2"></child>
+    </div>
+</template>
+<script>
+    new Vue({
+        el:"#demo",
+        components:{
+            "parent":{
+                template:"#parent",
+                data(){
+                    return {
+                        msg:"我是父组件的数据",
+                        msg2:"第二条父组件数据"
+                    }
+                },
+                components:{
+                    "child":{
+                        //第二步,子组件用props接收,格式是json和数组都行,json可以限制类型
+                        //props:{"m":String,"my-msg":String},
+                        props:["m","my-msg"],
+                        //注意{{myMsg}}要写成驼峰
+                        template:"<h3>我是子组件,我想拿到父组件的数据---{{m}}--{{myMsg}}</h3>"
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

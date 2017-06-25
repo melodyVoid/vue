@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>38-局部组件</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <aaa></aaa>
+</div>
+<template id="child">
+    <h3>我是组件</h3>
+</template>
+<script>
+    var Child = {
+        template:"#child"
+    };
+    new Vue({
+        el:"#demo",
+        components:{
+            "aaa":Child     //注意:局部组件只能在#demo里用
+        }
+    })
+</script>
+</body>
+</html>

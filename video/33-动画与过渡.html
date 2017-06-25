@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>33-动画与过渡</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .fade-enter-active,.fade-leave-active{
+            transition: all 0.5s ease;
+        }
+        .fade-enter,.fade-leave-active{
+            opacity:0;
+        }
+    </style>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <input type="button" value="按钮" @click="bShow = !bShow" >
+    <!-- 首先将要过渡的元素用transition包裹，并设置过渡的name，然后添加触发这个元素过渡的按钮
+    （实际项目中不一定是按钮，任何能触发过渡组件的DOM操作的操作都可以） -->
+    <transition name="fade">
+        <div class="box" v-show="bShow"></div>
+    </transition>
+
+</div>
+<script>
+    var vm = new Vue({
+        el:"#demo",
+        data:{
+            bShow:true
+        }
+    })
+</script>
+</body>
+</html>

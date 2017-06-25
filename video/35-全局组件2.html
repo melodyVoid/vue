@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>35-全局组件2</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <aaa></aaa>
+</div>
+<template id="aaa">
+    <div>
+        <h3>我是标题3</h3>
+        <strong>我是组件</strong>
+    </div>
+</template>
+<script>
+    //相当于1.0的vue.extend()
+    var Home = {
+        template:"#aaa"
+    };
+    //注册组件
+    Vue.component("aaa",Home);
+    new Vue({
+        el:"#demo",
+
+    })
+</script>
+</body>
+</html>

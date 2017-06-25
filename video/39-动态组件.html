@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>39-动态组件</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <input type="button" value="aaa" @click="value='aaa'">
+    <input type="button" value="bbb" @click="value='bbb'">
+    <!-- 动态组件要用component标签 -->
+    <component :is="value"></component>
+</div>
+<script>
+    new Vue({
+        el:"#demo",
+        data:{
+            value:"aaa"
+        },
+        components:{
+            "aaa":{
+                template:"<h2>我是组件a</h2>"
+            },
+            "bbb":{
+                template:"<h2>我是组件b</h2>"
+            }
+        }
+    })
+</script>
+</body>
+</html>

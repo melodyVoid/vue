@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>34-注册全局组件</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <aaa></aaa>
+    <span>{{msg }}</span>
+    <aaa>{{msg}}</aaa>
+    <aaa v-text="msg"></aaa>
+</div>
+<div id="vm">
+    <aaa></aaa>
+</div>
+<script>
+    Vue.component("aaa",{
+        template:"<h2>我是一个组件</h2>"
+    });
+    new Vue({
+        el:"#demo",
+        data:{
+            msg:"hello Vue"
+        }
+    });
+    new Vue({
+        el:"#vm"
+    })
+</script>
+</body>
+</html>

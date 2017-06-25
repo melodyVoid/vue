@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>44-slot2</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <aaa></aaa>
+    <hr>
+    <aaa>
+        <ul slot="ul-slot">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <ol slot="ol-slot">
+            <li>apple</li>
+            <li>banana</li>
+            <li>orange</li>
+            <li>pear</li>
+        </ol>
+    </aaa>
+</div>
+<template id="aaa">
+    <div>
+        <h2>我是一个组件</h2>
+        <!-- slot就是给标签内嵌套的东西占个位置,如果有嵌套就把slot替换掉,如果没有就显示默认 -->
+        <slot name="ul-slot">我是slot的默认情况</slot>
+        <p>我是一段文字</p>
+        <slot name="ol-slot">我是slot的默认情况</slot>
+    </div>
+</template>
+<script>
+    new Vue({
+        el:"#demo",
+        components:{
+            "aaa":{
+                template:"#aaa"
+            }
+        }
+    })
+</script>
+</body>
+</html>

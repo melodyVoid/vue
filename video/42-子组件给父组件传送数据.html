@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>42-子组件给父组件传送数据</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <parent></parent>
+</div>
+<template id="parent">
+    <div>
+        <h3>我是父组件,我想要获取子组件的数据 {{getMsg}}</h3>
+        <!-- 第二步:用自定义事件接收数据,因为是事件,所以用v-on或@,后面写一个方法,本例是get-->
+        <child @c-msg="get"></child>
+    </div>
+</template>
+<template id="child">
+    <div>
+        <!-- 第五步:把新写的父组件的数据写到html模板里 -->
+        <h4>我是子组件,这是我的数据 {{ childMsg }}</h4>
+        <input type="button" value="发送" @click="send">
+    </div>
+</template>
+<script>
+    new Vue({
+        el:"#demo",
+        components:{
+            "parent":{
+                template:"#parent",
+                //第四步:在父组件中写一个数据,用于接收
+                data(){
+                    return {
+                        getMsg:""
+                    }
+                },
+                methods:{
+                    //第三步:完成get方法,由于get用于接收数据,所以默认的参数就是数据
+                    get(msg){
+                        //第六步:用接收的子组件的数据替换父组件的数据
+                        this.getMsg = msg;
+                    }
+                },
+                components:{
+                    "child":{
+                        template:"#child",
+                        data(){
+                            return {
+                                "childMsg":"我是子组件的数据"
+                            }
+                        },
+                        methods:{
+                            send(){
+                                //第一步:发送数据到父组件,第一个参数是自定义事件名,第二个参数是数据
+                                this.$emit("c-msg",this.childMsg);
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

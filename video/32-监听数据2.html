@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>31-监听数据</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <h3>a: {{a}}</h3>
+    <h3>b: {{b}}</h3>
+</div>
+<script>
+    var vm = new Vue({
+        el:"#demo",
+        data:{
+            a:{
+                name:"Jack",age:18
+            },
+            b:2
+        }
+    });
+    document.onclick = function () {
+        vm.a.age = 12;
+    };
+    //监听a的变化,a要变为复杂数据呢
+    vm.$watch("a", function () {
+        alert("a发生变化了");
+    },{deep:true});    //监听复杂数据的时候要深度监听
+</script>
+</body>
+</html>

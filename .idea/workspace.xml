@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17eb5378-c38f-41ca-863e-978b6edd6838" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/video/46-路由2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/video/47-路由的嵌套.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/video/48-路由的参数.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/video/49-路由实例的方法.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/video/50-路由实例的方法2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/video/42-子组件给父组件传送数据.html" afterPath="$PROJECT_DIR$/video/42-子组件给父组件传送数据.html" />
     </list>
     <ignored path="vue.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,11 +56,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="47-路由的嵌套.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="47-路由的嵌套.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/video/47-路由的嵌套.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46824226">
+            <state vertical-scroll-proportion="-9.606061">
               <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="48-路由的参数.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/video/48-路由的参数.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="8.575758">
+              <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="49-路由实例的方法.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/video/49-路由实例的方法.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.424242">
+              <caret line="88" column="47" selection-start-line="88" selection-start-column="47" selection-end-line="88" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="50-路由实例的方法2.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/video/50-路由实例的方法2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6454948">
+              <caret line="93" column="57" selection-start-line="93" selection-start-column="57" selection-end-line="93" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -82,9 +112,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/video/2-基础事件.html" />
-        <option value="$PROJECT_DIR$/video/3-显示隐藏.html" />
-        <option value="$PROJECT_DIR$/video/用户信息表/asdfa.html" />
         <option value="$PROJECT_DIR$/video/用户信息表/用户信息表.html" />
         <option value="$PROJECT_DIR$/video/4-事件对象.html" />
         <option value="$PROJECT_DIR$/video/5-事件冒泡.html" />
@@ -133,6 +160,9 @@
         <option value="$PROJECT_DIR$/video/42-子组件给父组件传送数据.html" />
         <option value="$PROJECT_DIR$/video/46-路由2.html" />
         <option value="$PROJECT_DIR$/video/47-路由的嵌套.html" />
+        <option value="$PROJECT_DIR$/video/48-路由的参数.html" />
+        <option value="$PROJECT_DIR$/video/49-路由实例的方法.html" />
+        <option value="$PROJECT_DIR$/video/50-路由实例的方法2.html" />
       </list>
     </option>
   </component>
@@ -342,35 +372,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/12-过渡效果/12-11过渡模式.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53333336">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12-过渡效果/12-10多个元素过渡.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68">
-          <caret line="55" column="50" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/video/4-事件对象.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.909091">
-          <caret line="18" column="6" selection-start-line="15" selection-start-column="0" selection-end-line="18" selection-end-column="6" />
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="13" />
-          <caret line="21" column="19" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="19" />
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="17" />
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="33" />
-          <caret line="24" column="34" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="34" />
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="13" />
-          <caret line="26" column="9" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="9" />
-          <caret line="27" column="6" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/video/5-事件冒泡.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.181818">
@@ -757,8 +758,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/video/47-路由的嵌套.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46824226">
+        <state vertical-scroll-proportion="-9.606061">
           <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/video/48-路由的参数.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="8.575758">
+          <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/video/49-路由实例的方法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.424242">
+          <caret line="88" column="47" selection-start-line="88" selection-start-column="47" selection-end-line="88" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/video/50-路由实例的方法2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6454948">
+          <caret line="93" column="57" selection-start-line="93" selection-start-column="57" selection-end-line="93" selection-end-column="57" />
           <folding />
         </state>
       </provider>

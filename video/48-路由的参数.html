@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>48-路由的参数</title>
+    <script src="../vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+<div id="demo">
+    <ul>
+        <li><router-link to="/home">主页</router-link></li>
+        <li><router-link to="/news">新闻</router-link></li>
+    </ul>
+    <hr>
+    <router-view></router-view>
+</div>
+<template id="home">
+    <div>
+        <h3>我是主页</h3>
+        <p>我是主页的内容</p>
+        <ul>
+            <li><router-link to="/home/user/">用户</router-link></li>
+            <li><router-link to="/home/about">关于</router-link></li>
+        </ul>
+        <hr>
+        <router-view></router-view>
+    </div>
+</template>
+<template id="news">
+    <div>
+        <h3>我是新闻</h3>
+        <p>我是新闻的内容</p>
+    </div>
+</template>
+<template id="user">
+    <div>
+        <ul>
+            <li><router-link to="/home/user/jack/age/10">Jack</router-link></li>
+            <li><router-link to="/home/user/mary/age/20">Mary</router-link></li>
+        </ul>
+        <hr>
+        <router-view></router-view>
+    </div>
+</template>
+<template id="about">
+    <div>
+        我是关于
+    </div>
+</template>
+<template id="userdetail">
+    <div>
+        {{$route.params}}
+    </div>
+</template>
+<script>
+    const Home = {
+        template:"#home"
+    };
+    const News = {
+        template:"#news"
+    };
+    const User = {
+        template:"#user"
+    };
+    const About = {
+        template:"#about"
+    };
+    const UserDetail = {
+        template:"#userdetail"
+    };
+    const routes = [
+        {
+            path:"/home",
+            component:Home,
+            children:[
+                {
+                    path:"user",
+                    component:User,
+                    children:[
+                        {path:":username/age/:age",component:UserDetail}
+                    ]
+                },
+                {path:"about",component:About}
+            ]
+        },
+        {path:"/news",component:News}
+    ];
+    const router = new VueRouter({
+        routes
+    });
+    const vm = new Vue({
+        el:"#demo",
+        router
+    })
+</script>
+</body>
+</html>

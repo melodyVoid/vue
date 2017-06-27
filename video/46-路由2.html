@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>46-路由2</title>
+    <style>
+        .router-link-active{
+            font-size: 20px;
+            color:#f60;
+        }
+    </style>
+    <script src="../vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+<div id="demo">
+    <ul>
+        <li>
+            <router-link to="/home">主页</router-link>
+        </li>
+        <li>
+            <router-link to="/news">新闻</router-link>
+        </li>
+    </ul>
+    <hr>
+    <router-view></router-view>
+</div>
+<template id="home">
+    <div>
+        <h3>我是主页</h3>
+        <p>我是主页的内容</p>
+    </div>
+</template>
+<template id="news">
+    <div>
+        <h3>我是新闻</h3>
+        <p>我是新闻的内容</p>
+    </div>
+</template>
+<script>
+    const Home = {
+        template:"#home"
+    };
+    const News = {
+        template:"#news"
+    };
+    const routes = [
+        {path:"/home",component:Home},
+        {path:"/news",component:News},
+        //默认跳转到主页(重定向)
+        {path:"*",redirect:"/home"}
+    ];
+    const router = new VueRouter({
+        routes
+    });
+    const vm = new Vue({
+        el:"#demo",
+        router
+    })
+</script>
+</body>
+</html>

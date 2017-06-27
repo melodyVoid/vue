@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>47-路由的嵌套</title>
+    <script src="../vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+<div id="demo">
+    <ul>
+        <li>
+            <router-link to="/home">主页</router-link>
+        </li>
+        <li>
+            <router-link to="/news">新闻</router-link>
+        </li>
+    </ul>
+    <hr>
+    <router-view></router-view>
+</div>
+<template id="home">
+    <div>
+        <h3>我是主页</h3>
+        <p>我是主页的内容</p>
+        <ul>
+            <li>
+                <router-link to="/home/products">产品</router-link>
+            </li>
+            <li>
+                <router-link to="/home/about">关于</router-link>
+            </li>
+        </ul>
+        <hr>
+        <router-view></router-view>
+    </div>
+</template>
+<template id="news">
+    <div>
+        <h3>我是新闻</h3>
+        <p>我是新闻的内容</p>
+    </div>
+</template>
+<template id="products">
+    <div>
+        我是产品组件
+    </div>
+</template>
+<template id="about">
+    <div>
+        我是关于组件
+    </div>
+</template>
+<script>
+    const Home = {
+        template: "#home"
+    };
+    const News = {
+        template: "#news"
+    };
+    const Products = {
+        template: "#products"
+    };
+    const About = {
+        template: "#about"
+    };
+    const routes = [
+        {
+            path: "/home",
+            component: Home,
+            children: [
+                {path: "/home/products", component: Products},
+                {path: "/home/about", component: About},
+                //两种方式都对
+                //{path:"products",component:Products},
+                //{path:"about",component:About}
+            ]
+        },
+        {path: "/news", component: News}
+    ];
+    const router = new VueRouter({
+        routes
+    });
+    const vm = new Vue({
+        el: "#demo",
+        router
+    })
+</script>
+</body>
+</html>

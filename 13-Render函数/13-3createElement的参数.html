@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>13-3createElement的参数</title>
+    <script src="../vue.js"></script>
 </head>
 <body>
+<div id="demo">
+    <aaa></aaa>
+</div>
+<script>
+    Vue.component("aaa",{
+        render(createElement){
+            return createElement(
+                    //参数一:{String|Object|Function}
+                    //一个HTML 标签字符串,组件选项对象,或者一个返回类型为String/Object的函数,必要参数
+                    "div",
 
+                    //第二个参数:{Object}
+                    //一个包含模板相关属性的数据对象
+                    //这样,你就可以在template中使用这些属性
+                    {},//详见下一节
+
+                    //{String|Array}
+                    //子节点(VNode),可以是一个字符串或者一个数组,可选参数
+                    [
+                            createElement("div","hello world"),
+                            createElement("span",{
+                                props:{
+                                    someProp:"foo"
+                                }
+                            }),
+                            "bar"
+                    ]
+            )
+        }
+    });
+    new Vue({
+        el:"#demo"
+    })
+</script>
 </body>
 </html>

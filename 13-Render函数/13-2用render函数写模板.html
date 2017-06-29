@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>13-2用render函数写模板</title>
+    <script src="../vue.js"></script>
 </head>
 <body>
-
+<div id="demo">
+    <melody :level="2">你好</melody>
+</div>
+<script>
+    Vue.component("melody",{
+        render: function (createElement) {
+            return createElement(
+                    "h" + this.level,    //tag name 标签名称
+                    this.$slots.default   //子组件中的阵列
+            )
+        },
+        props:{
+            level:{
+                type:Number,
+                require:true
+            }
+        }
+    });
+    new Vue({
+        el:"#demo"
+    })
+</script>
 </body>
 </html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6-url传值</title>
+    <script src="../vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+<div id="demo">
+    <ul>
+        <li><router-link to="/home">首页</router-link></li>
+        <li><router-link to="/user">用户</router-link></li>
+    </ul>
+    <router-view></router-view>
+    {{$route.params}}
+</div>
+<template id="home">
+    <div>
+        <h3>我是首页</h3>
+    </div>
+</template>
+<template id="user">
+    <div>
+        <h3>我是用户</h3>
+        <hr>
+        <ul>
+            <li><router-link to="/user/Jack/10">Jack</router-link></li>
+            <li><router-link to="/user/Mary/20">Mary</router-link></li>
+            <li><router-link to="/user/default/1/30">正则</router-link></li>
+        </ul>
+        <router-view></router-view>
+        <pre><code>
+            {{$route.params}}
+        </code></pre>
+    </div>
+</template>
+<template id="userdetail">
+    <div>
+        {{$route.params}}
+    </div>
+</template>
+<template id="default">
+    <div>
+        {{$route.params}}
+    </div>
+</template>
+<script>
+    const Home = {
+        template:"#home"
+    };
+    const User = {
+        template:"#user"
+    };
+    const UserDetail = {
+        template:"#userdetail"
+    };
+    const Default = {
+        template:"#default"
+    }
+    const routes = [
+        {path:"/home",component:Home},
+
+        {
+            path:"/user",
+            component:User,
+            children:[
+                {path:":username/:age",component:UserDetail},
+                {path:"default/:id(\\d+)/:age",component:Default}
+            ]
+        }
+    ];
+    const router = new VueRouter({
+        routes
+    });
+
+    new Vue({
+        el:"#demo",
+        router
+    })
+</script>
+</body>
+</html>

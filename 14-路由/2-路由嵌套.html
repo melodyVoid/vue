@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-路由嵌套</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        ul li{
+            display: inline-block;
+        }
+    </style>
+    <script src="../vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+<div id="demo">
+    <ul>
+        <li><router-link to="/home">首页</router-link></li>
+        <li><router-link to="/news">新闻</router-link></li>
+        <li><router-link to="/about">关于</router-link></li>
+        <li><router-link to="/connect">联系我们</router-link></li>
+    </ul>
+    <hr>
+    <router-view></router-view>
+</div>
+<template id="home">
+    <div>
+        <h3>我是首页</h3>
+        <p>我是首页的内容</p>
+    </div>
+</template>
+<template id="news">
+    <div>
+        <h3>我是新闻</h3>
+        <p>我是新闻的内容</p>
+    </div>
+</template>
+<template id="about">
+    <div>
+        <h3>我是关于</h3>
+        <p>我是关于的内容</p>
+        <ul>
+            <li><router-link to="/about/goods">产品</router-link></li>
+            <li><router-link to="/about/tel">电话</router-link></li>
+        </ul>
+        <hr>
+        <router-view></router-view>
+    </div>
+</template>
+<template id="connect">
+    <div>
+        <h3>我是联系</h3>
+        <p>我是联系我们的内容</p>
+    </div>
+</template>
+<template id="goods">
+    <div>
+        我是产品
+    </div>
+</template>
+<template id="tel">
+    <div>
+        我是电话
+    </div>
+</template>
+<script>
+    const Home = {
+        template:"#home"
+    };
+    const News = {
+        template:"#news"
+    };
+    const About = {
+        template:"#about"
+    };
+    const Connect = {
+        template:"#connect"
+    };
+
+    const Goods = {
+        template:"#goods"
+    };
+    const Tel = {
+        template:"#tel"
+    };
+    const routes = [
+        {path:"/home",component:Home},
+        {path:"/news",component:News},
+        {
+            path:"/about",
+            component:About,
+            children:[
+                {path:"goods",component:Goods},
+                {path:"tel",component:Tel}
+            ]
+        },
+        {path:"/connect",component:Connect},
+        {path:"*",redirect:"/home"}
+    ];
+
+    const router = new VueRouter({
+        routes
+    });
+
+    const vm = new Vue({
+        el:"#demo",
+        router
+    })
+</script>
+</body>
+</html>

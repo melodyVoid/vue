@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-路由表的组件群</title>
+    <style>
+        
+        ul{
+            list-style:none;
+        }
+        ul li{
+            display: inline-block;
+        }
+        .left{
+            width: 50%;
+            height: 300px;
+            background: red;
+            float: left;
+        }
+        .right{
+            width: 50%;
+            height: 300px;
+            background: blue;
+            float: left;
+
+        }
+    </style>
+    <script src="../vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+<div id="demo">
+    <ul>
+        <li><router-link to="/home">首页</router-link></li>
+        <li><router-link to="/news">新闻</router-link></li>
+        <li><router-link to="/about">关于</router-link></li>
+    </ul>
+    <hr>
+    <router-view></router-view>
+    <hr>
+    <!-- 注意:这里name的内容和下面components里的内容配套 -->
+    <router-view class="left" name="left"></router-view>
+    <router-view class="right" name="right"></router-view>
+</div>
+<template id="home">
+    <div>
+        <h3>首页组件</h3>
+    </div>
+</template>
+<template id="news">
+    <div>
+        <h3>新闻组件</h3>
+    </div>
+</template>
+<template id="about">
+    <div>
+        <h3>关于组件</h3>
+    </div>
+</template>
+<template id="left">
+    <div>
+        我是左侧内容
+    </div>
+</template>
+<template id="right">
+    <div>
+        我是右侧内容
+    </div>
+</template>
+<script>
+    const Home = {
+        template:"#home"
+    };
+    const News = {
+        template:"#news"
+    };
+    const About = {
+        template:"#about"
+    };
+    const Left = {
+        template:"#left"
+    };
+    const Right = {
+        template:"#right"
+    };
+
+    const routes = [
+        {path:"/home",component:Home},
+        {
+            path:"/news",
+            components:{
+                default:News,
+                left:Left,
+                right:Right
+            }
+        },
+        {path:"/about",component:About}
+    ];
+    
+    const router = new VueRouter({
+        routes
+    });
+    
+    new Vue({
+        el:"#demo",
+        router
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-路由</title>
+    <style>
+        ul{
+            list-style:none;
+        }
+        ul li{
+            display: inline-block;
+
+        }
+    </style>
+    <script src="../vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+<div id="demo">
+    <ul>
+        <li><router-link to="/">首页</router-link></li>
+        <li><router-link to="/news">新闻</router-link></li>
+        <li><router-link to="/about">关于</router-link></li>
+        <li><router-link to="/connect">联系我们</router-link></li>
+    </ul>
+    <hr>
+    <router-view></router-view>
+</div>
+<template id="home">
+    <div>
+        <h3>这是默认的页面</h3>
+        <p>我是默认页面的内容</p>
+    </div>
+</template>
+<template id="news">
+    <div>
+        <h3>我是新闻页</h3>
+        <p>我是新闻的内容</p>
+    </div>
+</template>
+<template id="about">
+    <div>
+        <h3>我是关于</h3>
+        <p>我是关于的内容</p>
+    </div>
+</template>
+<template id="connect">
+    <div>
+        <h3>联系我们</h3>
+        <p>请联系我们</p>
+    </div>
+</template>
+<script>
+    const Home = {
+        template:"#home"
+    };
+    const News = {
+        template:"#news"
+    };
+    const About = {
+        template:"#about"
+    };
+    const Connect = {
+        template:"#connect"
+    };
+
+    const routes = [
+        {path:"/",component:Home},
+        {path:"/news",component:News},
+        {path:"/about",component:About},
+        {path:"/connect",component:Connect},
+        //默认跳转到主页(重定向)
+        {path:"*",component:Home}
+    ];
+
+    const router = new VueRouter({
+        routes
+    });
+    const vm = new Vue({
+        el:"#demo",
+        router
+    })
+</script>
+</body>
+</html>

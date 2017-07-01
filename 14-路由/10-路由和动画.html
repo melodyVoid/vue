@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-路由和动画</title>
+    <style>
+        .fade-enter-active,.fade-leave-acitve{
+            transition: 1s all ease;
+        }
+        .fade-enter,.fade-leave-active{
+            opacity:0;
+            transform: translateX(200px);
+        }
+    </style>
+    <script src="../vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+<div id="demo">
+    <ul>
+        <li><router-link to="/home">首页</router-link></li>
+        <li><router-link to="/news">新闻</router-link></li>
+    </ul>
+    <hr>
+    <transition name="fade" mode="out-in">
+        <router-view></router-view>
+    </transition>
+</div>
+<template id="home">
+    <div>
+        <h3>我是首页</h3>
+        <p>我是首页的内容</p>
+    </div>
+</template>
+<template id="news">
+    <div>
+        <h3>我是新闻</h3>
+        <p>我是新闻的内容</p>
+    </div>
+</template>
+<script>
+    const Home = {
+        template:"#home"
+    };
+    const News = {
+        template:"#news"
+    };
+
+    const routes = [
+        {path:"/home",component:Home},
+        {path:"/news",component:News}
+    ];
+    const router = new VueRouter({
+        routes
+    });
+
+    new Vue({
+        el:"#demo",
+        router
+    })
+</script>
+</body>
+</html>

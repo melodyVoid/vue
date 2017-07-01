@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7-query</title>
+    <script src="../vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+<div id="demo">
+    <ul>
+        <li><router-link to="/home">首页</router-link></li>
+        <li><router-link to="/news">新闻</router-link></li>
+        <li><router-link to="/user">用户</router-link></li>
+    </ul>
+    <hr>
+    <router-view></router-view>
+</div>
+<template id="home">
+    <div>
+        <h3>我是首页</h3>
+    </div>
+</template>
+<template id="news">
+    <div>
+        <h3>我是新闻</h3>
+    </div>
+</template>
+<template id="user">
+    <div>
+        <h3>我是用户</h3>
+        <ul>
+            <li><router-link :to="{path:'/user/jack',query:{age:12}}">Jack</router-link></li>
+            <li><router-link :to="{path:'/user/mary',query:{age:18}}">Mary</router-link></li>
+        </ul>
+        <router-view></router-view>
+    </div>
+</template>
+<template id="info">
+    <div>
+        {{$route.params}}  ----- {{$route.query.age}}
+    </div>
+</template>
+<script>
+    const Home = {
+        template:"#home"
+    };
+    const News = {
+        template:"news"
+    };
+    const User = {
+        template:"#user"
+    };
+    const Info = {
+        template:"#info"
+    };
+
+    const routes = [
+        {path:"/home",component:Home},
+        {path:"/news",component:News},
+        {
+            path:"/user",
+            component:User,
+            children:[
+                {path:":username",component:Info}
+            ]
+        }
+    ];
+
+    const router = new VueRouter({
+        routes
+    });
+
+    new Vue({
+        router
+    }).$mount("#demo")
+</script>
+</body>
+</html>

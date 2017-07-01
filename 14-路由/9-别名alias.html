@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9-别名alias</title>
+    <script src="../vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+<div id="demo">
+    <ul>
+        <li><router-link to="/home">Home</router-link></li>
+        <li><router-link to="/news">News</router-link></li>
+        <li><router-link to="/about">About</router-link></li>
+        <li><router-link to="/first">first</router-link></li>
+        <li><router-link to="/second">second</router-link></li>
+        <li><router-link to="/third">third</router-link></li>
+    </ul>
+    <hr>
+    <router-view></router-view>
+</div>
+<template id="home">
+    <div>
+        <h3>我是首页</h3>
+        {{$route.params}}
+    </div>
+</template>
+<template id="news">
+    <div>
+        <h3>我是新闻</h3>
+    </div>
+</template>
+<template id="about">
+    <div>
+        <h3>我是关于</h3>
+    </div>
+</template>
+<script>
+    const Home = {
+        template:"#home"
+    };
+    const News = {
+        template:"#news"
+    };
+    const About = {
+        template:"#about"
+    };
+
+    const routes = [
+        //alias用于起别名，在上面的路由中通过/first也能找到/home,通过/second和/third能找到/news
+        {path:"/home",component:Home,alias:"/first"},
+        {path:"/news",component:News,alias:["/second","/third"]},
+        {path:"/about",component:About},
+
+    ];
+    const router = new VueRouter({
+        routes
+    });
+    new Vue({
+        el:"#demo",
+        router
+    })
+</script>
+</body>
+</html>

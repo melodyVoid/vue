@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13-路由里的钩子</title>
+    <style>
+        .fade-enter-active,.fade-leave-acitve{
+            transition: 1s all ease;
+        }
+        .fade-enter,.fade-leave-active{
+            opacity:0;
+            transform: translateX(200px);
+        }
+    </style>
+    <script src="../vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+<div id="demo">
+    <ul>
+        <li><router-link to="/home">首页</router-link></li>
+        <li><router-link to="/news">新闻</router-link></li>
+        <li><router-link to="/newsssss">瞎写的路由，会跳转404</router-link></li>
+    </ul>
+    <hr>
+    <transition name="fade" mode="out-in">
+        <router-view></router-view>
+    </transition>
+</div>
+<template id="home">
+    <div>
+        <h3>我是首页</h3>
+        <p>我是首页的内容</p>
+    </div>
+</template>
+<template id="news">
+    <div>
+        <h3>我是新闻</h3>
+        <p>我是新闻的内容</p>
+    </div>
+</template>
+<template id="page404">
+    <div>
+        <h3>404:Not Found</h3>
+    </div>
+</template>
+<script>
+    const Home = {
+        template:"#home"
+    };
+    const News = {
+        template:"#news"
+    };
+    const Page404 = {
+        template:"#page404",
+        //写在模板里的钩子
+        beforeRouteEnter:(to,from,next) => {
+            console.log(to);
+            console.log(from);
+            next();
+        },
+        beforeRouteLeave:(to,from,next) => {
+            console.log(to);
+            console.log(from);
+            next()
+        }
+    };
+    const routes = [
+        {path:"/home",component:Home},
+        {
+            path:"/news",
+            component:News,
+            //写在路由表里的钩子
+            beforeEnter:(to,from,next)=>{
+                console.log(to);
+                console.log(from);
+                //next(false);  //不写next或者next(false),可以无限打印
+                next();  //只打印一次
+            }
+        },
+        {path:"*",component:Page404}
+    ];
+    const router = new VueRouter({
+        routes
+    });
+
+    new Vue({
+        el:"#demo",
+        router
+    })
+</script>
+</body>
+</html>

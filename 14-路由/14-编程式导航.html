@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14-编程式导航</title>
+    <style>
+        .fade-enter-active,.fade-leave-acitve{
+            transition: 1s all ease;
+        }
+        .fade-enter,.fade-leave-active{
+            opacity:0;
+            transform: translateX(200px);
+        }
+    </style>
+    <script src="../vue.js"></script>
+    <script src="vue-router.js"></script>
+</head>
+<body>
+<div id="demo">
+    <input type="button" value="前进" @click="go">
+    <input type="button" value="后退" @click="back">
+    <input type="button" value="回到主页" @click="home">
+    <input type="button" value="query传值" @click="query">
+    <ul>
+        <li><router-link to="/home">首页</router-link></li>
+        <li><router-link to="/news">新闻</router-link></li>
+        <li><router-link to="/newsssss">瞎写的路由，会跳转404</router-link></li>
+    </ul>
+    <hr>
+    <transition name="fade" mode="out-in">
+        <router-view></router-view>
+    </transition>
+</div>
+<template id="home">
+    <div>
+        <h3>我是首页</h3>
+        <p>我是首页的内容</p>
+    </div>
+</template>
+<template id="news">
+    <div>
+        <h3>我是新闻</h3>
+        <p>我是新闻的内容</p>
+    </div>
+</template>
+<template id="page404">
+    <div>
+        <h3>404:Not Found</h3>
+    </div>
+</template>
+<script>
+    const Home = {
+        template:"#home"
+    };
+    const News = {
+        template:"#news"
+    };
+    const Page404 = {
+        template:"#page404"
+    };
+    const routes = [
+        {path:"/home",component:Home},
+        {path:"/news",component:News},
+        //注意path:"*"必须放在最后
+        {path:"*",component:Page404}
+    ];
+    const router = new VueRouter({
+        routes
+    });
+
+    new Vue({
+        el:"#demo",
+        router,
+        methods:{
+            go(){
+                router.go(1)
+            },
+            back(){
+                router.go(-1)
+            },
+            home(){
+                console.log(router);
+                router.push("/home")
+            },
+            query(){
+                router.push({path:"/news",query:{name:"jack",age:10}})
+            }
+        }
+    })
+</script>
+</body>
+</html>

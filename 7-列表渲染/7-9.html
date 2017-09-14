@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="demo">
+    <ul>
+        <li v-for="(item,index) in good" :key="index">
+            <input type="checkbox" :value="index" v-model="checkName">
+            {{item.price | currency}}
+            <input type="button" value="-" @click="minus(index)">
+            <input type="text" v-model="item.num">
+            <input type="button" value="+" @click="add(index)">
+            <input type="button" value="删除" @click="del(index)">
+        </li>
+    </ul>
+    <p>总价{{ total | currency}}</p>
+    <p>总数量 {{ allCount }}</p>
+    <p><input type="button" value="删除所选" @click="delChecked"></p>
+    <p><input type="button" value="清空" @click="clearAll"></p>
+    <p><input type="checkbox" id="checkAll" @click="checkAll"> 全选</p>
+    <p>{{checkName}}</p>
+</div>
+<script>
+    let goods = [
+        {id:"01",name:"手机",price:1000,num:1},
+        {id:"02",name:"电脑",price:4000,num:1},
+        {id:"03",name:"平板",price:2000,num:1},
+    ];
+    let vm = new Vue({
+        el:"#demo",
+
+        data:{
+            good:goods,
+            checkName:[],
+            checked:[]
+
+        },
+        filters:{
+            currency(val){
+                return "￥" + val.toFixed(2);
+            }
+        },
+        computed:{
+            check(){
+                this.checked = [];
+                this.checkName.forEach((item)=>{
+                    this.checked.push(this.good[item])
+                });
+                return this.checked;
+            },
+            total(){
+                let tempTotal = 0;
+                this.check.forEach((item)=>{
+                    tempTotal += item.price * item.num;
+                });
+                return tempTotal;
+            },
+            allCount(){
+                let allCount = 0;
+                this.check.forEach((item)=>{
+                    allCount += item.num;
+                });
+                return allCount;
+            }
+        },
+
+        methods:{
+            add(index){
+                this.good[index].num++
+//                goods[index].num++
+            },
+            minus(index){
+                this.good[index].num = Math.max(0,--this.good[index].num)
+            },
+            del(index){
+                //this.good.splice(index,1);
+                this.$emit("del",index);
+            },
+            delChecked(){
+                /*this.checkName.sort((a,b)=>{
+                    return b - a;
+                }).forEach((item)=>{
+                    this.$emit("del",item);
+
+                });
+                this.checkName = []*/
+                let flag = [];
+                let newArr = [];
+                this.good.forEach((item,index)=>{
+                    flag[index] = false;
+                });
+                this.checkName.forEach((item)=>{
+                    flag[item] = true;
+                });
+                flag.forEach((item,index)=>{
+                    if(!item){
+                        newArr.push(this.good[index])
+                    }
+                });
+                this.good = newArr;
+                this.checkName = [];
+                //删除完成后把复选框取消选中状态
+                document.getElementById("checkAll").checked = false;
+            },
+            clearAll(){
+                //清空，先全选，再清空
+                this.good.forEach((item,index)=>{
+                    this.checkName.push(index)
+                });
+                this.delChecked();
+            },
+            checkAll(){
+                this.checkName = [];
+                if(document.getElementById("checkAll").checked){
+                    this.good.forEach((item,index)=>{
+                        this.checkName.push(index)
+                    });
+                }
+
+            }
+        },
+        created(){
+            this.$on("del",(index)=>{
+                this.good.splice(index,1);
+//                alert(this.checkName.indexOf(index));
+
+                this.checkName.splice(0,1)
+            })
+        }
+    });
+</script>
+</body>
+</html>
